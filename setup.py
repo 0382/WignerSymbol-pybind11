@@ -16,7 +16,7 @@ setup(
     version=__version__,
     author="0382",
     author_email="18322825326@163.com",
-    url="https://github.com/0382/WignerSymbol.py",
+    url="https://github.com/0382/WignerSymbol-pybind11",
     description="Python port of 0382/WignerSymbol",
     ext_modules=ext_modules,
     cmdclass={"build_ext": build_ext},
