@@ -1,6 +1,9 @@
 #include <pybind11/pybind11.h>
 #include "WignerSymbol/WignerSymbol.hpp"
 
+#define STRINGIFY(x) #x
+#define MACRO_STRINGIFY(x) STRINGIFY(x)
+
 namespace py = pybind11;
 using namespace util;
 
@@ -80,7 +83,7 @@ PYBIND11_MODULE(WignerSymbol, m){
     m.def("dfunc", &dfunc, "dj"_a, "dm1"_a, "dm2"_a, "beta"_a);
     m.def("Moshinsky", &Moshinsky, "Nc"_a, "Lc"_a, "nr"_a, "lr"_a, "n1"_a, "l1"_a, "n2"_a, "l2"_a, "lambda"_a, "tan_beta"_a);
 #ifdef VERSION
-    m.attr("__version__") = VERSION;
+    m.attr("__version__") = MACRO_STRINGIFY(VERSION);
 #else
     m.attr("__version__") = "dev";
 #endif
