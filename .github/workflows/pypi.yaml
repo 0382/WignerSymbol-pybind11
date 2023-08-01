@@ -8,13 +8,14 @@ on:
 
 jobs:
   deploy:
+    name: Upload WignerSymbol
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         python-version: ['3.8', '3.9', '3.10']
         os: [ubuntu-latest]
         # os: [ubuntu-latest, windows-latest, macos-latest]
-    enviroment:
+    environment:
       name: pypi
       url: https://pypi.org/project/WignerSymbol
     steps:
