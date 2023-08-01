@@ -10,7 +10,8 @@ __version__ = "0.0.5"
 ext_modules = [
     Pybind11Extension("WignerSymbol",
                       ["lib.cpp"],
-                      define_macros=[("VERSION", __version__)]
+                      define_macros=[("VERSION", __version__)],
+                      include_dirs=[this_dir],
                       ),
 ]
 
