@@ -37,4 +37,4 @@ jobs:
         # uses: pypa/gh-action-pypi-publish@release/v1
         run: |
           python -m build -w
-          python -m twine upload dist/*
+          python -m twine upload dist/* --repository-url https://pypi.org/project/WignerSymbol
