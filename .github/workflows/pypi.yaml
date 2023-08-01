@@ -18,6 +18,8 @@ jobs:
     environment:
       name: pypi
       url: https://pypi.org/project/WignerSymbol
+    permissions:
+      id-token: write
     steps:
       - name: Publish package
         uses: pypa/gh-action-pypi-publish@release/v1
