@@ -5,13 +5,12 @@ from pathlib import Path
 this_dir = Path(__file__).parent
 long_description = (this_dir / "README.md").read_text()
 
-__version__ = "0.0.5"
+__version__ = "0.0.6"
 
 ext_modules = [
     Pybind11Extension("WignerSymbol",
                       ["lib.cpp"],
                       define_macros=[("VERSION", __version__)],
-                      include_dirs=[this_dir],
                       ),
 ]
 
