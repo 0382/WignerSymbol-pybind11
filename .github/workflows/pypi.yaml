@@ -3,6 +3,7 @@ name: Upload WignerSymbol
 on:
   push:
     branches: [master]
+    tags: ['v*']
 
 jobs:
   deploy:
