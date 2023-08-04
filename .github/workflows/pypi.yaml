@@ -2,7 +2,6 @@ name: Upload WignerSymbol
 
 on:
   push:
-    # branches: [master]
     tags: ['v*']
 
 jobs:
@@ -12,7 +11,6 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        # os: [ubuntu-latest, windows-latest, macos-latest]
     environment:
       name: pypi
       url: https://pypi.org/project/WignerSymbol
