@@ -3,8 +3,6 @@ name: Upload WignerSymbol
 on:
   push:
     branches: [master]
-  # release:
-  #   types: [published]
 
 jobs:
   deploy:
@@ -12,7 +10,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        # os: [ubuntu-latest]
         os: [ubuntu-latest, windows-latest, macos-latest]
     environment:
       name: pypi
@@ -39,10 +36,15 @@ jobs:
         run: |
           python -m build --sdist
           python -m cibuildwheel --output-dir dist
-      # - uses: actions/upload-artifact@v3
-      #   if: ${{ startsWith(github.ref, 'refs/tags/') }}
-      #   with:
-      #     path: dist/*
+      - uses: actions/upload-artifact@v3
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        with:
+          path: dist/*
+      - name: release
+        uses: softprops/action-gh-release@v1
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        with:
+          path: dist/*
       - name: Publish package
         uses: pypa/gh-action-pypi-publish@release/v1
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
