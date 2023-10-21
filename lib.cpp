@@ -35,7 +35,7 @@ PYBIND11_MODULE(WignerSymbol, m){
         .def("Racah", &WignerSymbols::Racah, racah_doc, "dj1"_a, "dj2"_a, "dj3"_a, "dj4"_a, "dj5"_a, "dj6"_a)
         .def("f9j", &WignerSymbols::f9j, f9j_doc, "dj1"_a, "dj2"_a, "dj3"_a, "dj4"_a, "dj5"_a, "dj6"_a, "dj7"_a, "dj8"_a, "dj9"_a)
         .def("norm9j", &WignerSymbols::norm9j, norm9j_doc, "dj1"_a, "dj2"_a, "dj3"_a, "dj4"_a, "dj5"_a, "dj6"_a, "dj7"_a, "dj8"_a, "dj9"_a)
-        .def("lsjj", &WignerSymbols::lsjj, lsjj_doc, "l1"_a, "l2"_a, "dj1"_a, "dj2"_a, "L"_a, "S"_a, "J"_a)
+        .def_static("lsjj", &WignerSymbols::lsjj, lsjj_doc, "l1"_a, "l2"_a, "dj1"_a, "dj2"_a, "L"_a, "S"_a, "J"_a)
         .def("dfunc", &WignerSymbols::dfunc, dfunc_doc, "dj"_a, "dm1"_a, "dm2"_a, "beta"_a)
         .def("Moshinsky", &WignerSymbols::Moshinsky, Moshinsky_doc, "Nc"_a, "Lc"_a, "nr"_a, "lr"_a, "n1"_a, "l1"_a, "n2"_a, "l2"_a, "lambda"_a, "tan_beta"_a);
     m.attr("_wigner") = wigner;
