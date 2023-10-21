@@ -5,7 +5,7 @@ from pathlib import Path
 this_dir = Path(__file__).parent
 long_description = (this_dir / "README.md").read_text()
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 ext_modules = [
     Pybind11Extension("WignerSymbol",
